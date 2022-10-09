@@ -1,0 +1,66 @@
+@import './variables';
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+    overflow: hidden;
+    z-index: 9999;
+
+    a {
+        text-decoration: none;
+        color: $text-color;
+        margin: 0 1em;
+        transition: color 0.3s;
+        
+        &:hover {
+            color: $blue-color;
+        }
+    }
+}
+
+.burger__menu {
+    display: none;
+
+    img {
+        cursor: pointer;
+    }
+}
+
+@media screen and (max-width: 1140px) {
+    .navbar {
+        width: 90%;
+    }
+
+    .navbar__links {
+        display: none;
+    }
+
+    .navbar__links-dropdown {
+        flex-direction: column;
+        position: absolute;
+        top: 48px;
+        left: 0;
+        width: 100%;
+        background-color: white;
+        border-bottom: 1px solid $dark-gray-color;
+        z-index: 500;
+
+        a {
+            margin: 1em auto;
+            z-index: 999;
+            width: 90%;
+        }
+    }
+
+    .burger__menu {
+        display: block;
+    }
+}
+
+@media screen and (min-width: 1140px) {
+    .navbar__links-dropdown {
+            display: none !important;
+    }
+}

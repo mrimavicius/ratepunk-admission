@@ -1,0 +1,66 @@
+@import './variables';
+
+.download-section {
+    background-color: $dark-gray-color;
+
+    .store {
+        display: flex;
+        align-items: center;
+        padding: 2em 0;
+        
+        p {
+            color: white;
+        }
+
+        .store-item {
+            display: flex;
+            width: 30%;
+            border: 1px solid black;
+            border-radius: 12px;
+            padding: 0.8em 1.2em;
+            margin: 1em 1em 1em 0;
+            cursor: pointer;
+
+            img {
+                width: 56px;
+                height: 52px;
+            }
+
+            .store-item-info {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                margin-left: 0.4em;
+
+                p {
+                    font-size: 16px;
+                }
+
+                h4 {
+                    font-size: 20px;
+                }
+            }
+        }
+
+        .store-item-stars {
+            display: flex;
+            align-items: center;
+
+            p {
+                margin-left: 1em;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1140px) {
+    .download-section {
+        .store {
+            flex-direction: column;
+    
+            .store-item {
+                width: 90%;
+            }
+        }
+    }
+}

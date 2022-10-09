@@ -1,0 +1,131 @@
+@import './variables';
+
+.footer {
+    background-color: $gray-color;
+
+    p {
+        font-size: 16px;
+    }
+
+    a {
+        display: block;
+        text-decoration: none;
+        margin: 0.5em 0;
+        color: $light-gray-color;
+        transition: color 0.3s;
+
+        &:hover {
+            color: $blue-color;
+        }
+    }
+
+    .footer-grid {
+        display: grid;
+        grid-template-columns: 3fr 1fr 1fr;
+        gap: 5em;
+
+        .footer-grid-column {
+            margin: 2em 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+
+            img {
+                width: 125px;
+                height: 32px;
+            }
+
+            .list-item {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+
+                .list-item-title {
+                    font-size: 20px;
+                    color: $dark-gray-color;
+                    text-transform: uppercase;
+                    font-weight: 600;
+                    letter-spacing: 1px;
+                    margin-bottom: 0.8em;
+                }
+
+                .contact-email {
+                    display: flex;
+                    align-items: center;
+
+                    a {
+                        margin-left: 0.8em;
+                    }
+                }
+
+                .social-icons {
+                    display: flex;
+                    gap: 0.5em;
+
+                    .social-single-icon {
+                        background-color: $blue-color;
+                        width: 32px;
+                        height: 32px;
+                        padding: 0.35em;
+                        border: 1px solid $dark-gray-color;
+                        border-radius: 8px;
+                        cursor: pointer;
+                        transition: 0.3s;
+
+                        &:hover {
+                            background-color: $orange-color;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .copyright {
+        color: $light-gray-color;
+    }
+}
+
+@media screen and (max-width: 1140px) {
+    .footer {
+
+        .container {
+            position: relative;
+
+            .copyright {
+                position: absolute;
+                bottom: 1em;
+            }
+        }
+
+        .footer-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+
+            .footer-grid-column {
+                width: 90%;
+                margin: 0 auto;
+
+                p {
+                    margin-top: 1em;
+                    line-height: 1.6em;
+                }
+
+                .list-item {
+                    .list-item-title {
+                        margin: 1em 0;
+                    }
+                }
+            }
+
+            .footer-grid-column:first-of-type {
+                margin-top: 2em;
+            }
+
+            .footer-grid-column:last-of-type{
+                margin-bottom: 4em;
+            }
+        }
+    }
+}

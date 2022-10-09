@@ -1,0 +1,145 @@
+@import './variables';
+
+.refer-page {
+    background-color: $orange-color;
+    border-top: 1px solid $dark-gray-color;
+
+    .container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: 1fr;
+        gap: 8em;
+    }
+
+    .refer-card {
+        background-color: white;
+        border: 1px solid black;
+        border-radius: 12px;
+        padding: 3em;
+        margin: 3em 0;
+        display: inline-block;
+        position: relative;
+
+        p {
+            margin: 1.6em 0;
+            line-height: 1.8em;
+        }
+        
+        .error {
+            color: red;
+            margin: 0;
+        }
+
+        .success-box {
+            display: flex;
+        }
+
+        .success {
+            font-weight: 700;
+            margin: 0;
+            margin-left: 1em;
+        }
+
+        input, button {
+            width: 100%;
+            padding: 0.8em;
+            margin: 0.25em 0;
+            border: 1px solid $dark-gray-color;
+            border-radius: 8px;
+            font-size: 1.2em;
+        }
+
+        input {
+            padding-left: 2.8em;
+        }
+
+        button {
+            background-color: $blue-color;
+            cursor: pointer;
+        }
+
+        .refer-card-input {
+            position: relative;
+
+            .email-icon {
+                position: absolute;
+                left: 1em;
+                top: 1.6em;
+            }
+
+            .copy-btn {
+                position: absolute;
+                top: 0;
+                width: 100px;
+                right: 0;
+                border-radius: 0 8px 8px 0;
+            }
+        }
+
+        .light-text {
+            color: $light-gray-color;
+            position: absolute;
+            bottom: 0;
+            font-size: 1em;
+        }
+    }
+
+    .refer-steps {
+        margin: 3em 0;
+
+        .refer-single-step {
+            display: flex;
+            margin: 1.6em 0;
+
+            img {
+                padding: 1em;
+            }
+
+            .step-info {
+                padding: 0.2em 1em;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+            }
+        }
+
+        .refer-single-step:nth-of-type(2n) {
+            flex-direction: row-reverse;
+        }
+    }
+
+}
+
+@media screen and (max-width: 1140px) {
+    .refer-page {
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+        }
+
+        .refer-card {
+            width: 90%;
+            margin: 2em auto;
+            padding: 1em;
+            padding-bottom: 5em;
+        }
+
+        .refer-steps {
+            width: 90%;
+            margin: 0 auto;
+            
+            .refer-single-step {
+                flex-direction: column !important;
+                align-items: center;
+                text-align: center;
+
+                img {
+                    width: 256px;
+                    aspect-ratio: 1/1;
+                }
+            }
+        }
+    }
+}
